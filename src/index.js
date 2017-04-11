@@ -3,19 +3,28 @@ import parse from 'utils/parse'
 
 export default class TMWidgets {
 
-  constructor () {
-    this.renderTMRealtime = this.renderTMRealtime.bind(this)
-  }
-
   run () {
-    parse('tmrealtime', this.renderTMRealtime, this)
+    parse('tmrealtime', this.initTMRealtime, this)
   }
 
-  renderTMRealtime (el) {
+  initTMRealtime (el) {
     let stationSlug = $(el).attr('station')
     if (!stationSlug) {
       throw new Error('tmrealtime must define a station attribute')
     }
+    this.fetchData(stationSlug, el)
+  }
+
+  fetchData (stationSlug, el) {
+    $.getJSON('https://www.torinometeo.org/api/v1/realtime/data/' + stationSlug, (resp) => {
+      this.renderTMRealtime(resp, el)
+    })
+  }
+
+  renderTMRealtime (data, el) {
+    console.log('rendering', data)
+    let wrapper = $('<div />').html(data.station.name)
+    $(el).replaceWith(wrapper)
   }
 }
 
