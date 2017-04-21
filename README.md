@@ -7,7 +7,7 @@ dei dati messi a disposizion tramite [web service](https://www.torinometeo.org/a
 
 Questa libreria è stata sviluppata seguendo una linea guida principale: fornire un widget quanto più puro (non stilizzato) possibile.
 Questo per permettere un elevato grado di personalizzazione e stilizzazione agli utenti. Forniremo poi degli snippet css già pronti per l'utilizzo,
-come fossero dei temi, per facilitare ulteriormente gli utenti che non volessero personalizzazioni elevate.
+come fossero dei temi, per facilitare ulteriormente gli utenti che non hanno bisogno di personalizzazioni elevate.
 
 Questo significa che l'output di questa libreria sarà un html puro, con molte classi definite sugli elementi in modo da permettere una facile personalizzazione.
 
@@ -61,6 +61,7 @@ Permette di definire una funzione (il nome della funzione anche con namespace se
 Opzionale.
 
 Formato del datetime dell'ultima rilevazione, default: GG mese AAAA HH:MM, esempio: 21 aprile 2017 10:34
+
 I formati disponibili sono tutti quelli masticati da momentjs, e li trovi [qui](https://momentjs.com/docs/#/displaying/format/)
 
 ## Etichette
@@ -109,6 +110,23 @@ Opzionale.
 
 Default: 'accumulo precipitazioni'
 
+## Esempio
+
+    <div class="widget-container">
+      <tmrealtime
+        lastMeasureLabel="<i class='wi wi-time-1'></i>"
+        temperatureLabel="<i class='wi wi-thermometer'></i>"
+        rhLabel="<i class='wi wi-humidity'></i>"
+        pressureLabel="<i class='wi wi-barometer'></i>"
+        windLabel="<i class='wi wi-strong-wind'></i>"
+        rainRateLabel="<i class='wi wi-raindrops'></i>"
+        rainLabel="<i class='wi wi-umbrella'></i>"
+        station="torino-regio-parco"
+        datetimeFormat="DD/MM/YY HH:mm"
+        onReady="tmReady"
+      />
+    </div>
+
 ## Stili
 
 Ogni elemento del widget è corredato da una o più classi css che vi permettono di ottenere una stilizzazione ottimale per il contesto in cui il widget sarà inserito. Inoltre ci sono alcune classi dinamiche (che dipendono dai valori):
@@ -140,12 +158,12 @@ Clonare il repository:
 
 Installare le dipendenze
 
-   $ cd tm-widgets
-   $ npm install
+    $ cd tm-widgets
+    $ npm install
 
 Lanciare il server di sviluppo:
 
-  $ npm run dev
+    $ npm run dev
 
 Aprire il file `demo/basic.html` e switchare i commenti delle seguenti linee in modo da avere:
 
