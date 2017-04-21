@@ -1,5 +1,7 @@
 # tm-widgets
 
+![image](widget.png "Widget")
+
 Libreria per l'inserimento di widget relativi alla rete di stazioni amatoriali TorinoMeteo in siti esterni.
 
 Questa libreria è stata sviluppata per venire incontro agli utenti che non hanno dimestichezza o non hanno la possibilità di fruire direttamente
@@ -10,6 +12,10 @@ Questo per permettere un elevato grado di personalizzazione e stilizzazione agli
 come fossero dei temi, per facilitare ulteriormente gli utenti che non hanno bisogno di personalizzazioni elevate.
 
 Questo significa che l'output di questa libreria sarà un html puro, con molte classi definite sugli elementi in modo da permettere una facile personalizzazione.
+
+**NB**
+
+Nell'immagine vedete un widget personalizzato tramite il file css che trovate in `demo/demo.css`, la libreria di per sè non setta alcuno stile!
 
 ## Requirements
 
