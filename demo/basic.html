@@ -3,10 +3,35 @@
   <head>
     <title>tm-widgets basic demo</title>
     <meta charset="utf-8" />
-    <script src="/dist/tm-widgets.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"></script>
+    <!-- <script src="/dist/tm-widgets.min.js"></script> --><!-- dev -->
+    <script src="../dist/tm-widgets.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="demo.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Nova+Mono|Oswald:400,700" rel="stylesheet"> 
   </head>
   <body>
     <h1>tm-widgets basic demo</h1>
-    <tmrealtime station="torino-regio-parco" />
+    <script>
+      function tmReady () {
+        // alert('widget is ready!')
+      }
+    </script>
+    <div class="widget-container">
+      <tmrealtime
+        lastMeasureLabel="<i class='wi wi-time-1'></i>"
+        temperatureLabel="<i class='wi wi-thermometer'></i>"
+        rhLabel="<i class='wi wi-humidity'></i>"
+        pressureLabel="<i class='wi wi-barometer'></i>"
+        windLabel="<i class='wi wi-strong-wind'></i>"
+        rainRateLabel="<i class='wi wi-raindrops'></i>"
+        rainLabel="<i class='wi wi-umbrella'></i>"
+        station="torino-regio-parco"
+        onReady="tmReady"
+      />
+    </div>
   </body>
 </html>

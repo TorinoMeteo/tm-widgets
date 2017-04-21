@@ -4,7 +4,9 @@
   "description": "TorinoMeteo Widgets",
   "main": "index.js",
   "scripts": {
-    "compile": "./node_modules/webpack/bin/webpack.js -p",
+    "clean": "rimraf dist",
+    "compile": "DEBUG='app:*' ./node_modules/webpack/bin/webpack.js -p",
+    "deploy": "npm run lint && npm run clean && DEBUG='app:*' NODE_ENV=production ./node_modules/webpack/bin/webpack.js -p",
     "dev": "webpack-dev-server --progress --colors --config ./webpack.config.babel.js",
     "lint": "./node_modules/eslint/bin/eslint.js ."
   },
@@ -27,6 +29,8 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
+    "css-loader": "^0.26.4",
+    "debug": "^2.6.4",
     "eslint": "^3.13.1",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-babel": "^4.0.0",
@@ -35,6 +39,7 @@
     "eslint-plugin-standard": "^2.0.1",
     "file-loader": "^0.11.1",
     "node-sass": "^4.5.2",
+    "url-loader": "^0.5.8",
     "webpack-dev-server": "^1.16.2"
   }
 }

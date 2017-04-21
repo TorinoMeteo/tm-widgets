@@ -11,9 +11,7 @@
   },
   "globals" : {
     "$": {},
-    "jQuery": {},
-    "geodrawer": {},
-    "google": {}
+    "jQuery": {}
   },
   "rules": {
     "semi" : [2, "never"],

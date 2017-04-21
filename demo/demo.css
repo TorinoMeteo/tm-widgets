@@ -1,0 +1,114 @@
+body {
+  text-align: center;
+}
+.widget-container {
+  display: inline-block;
+  margin: auto;
+  text-align: left;
+}
+
+/* tm-widgets */
+.tm-realtime-widget {
+  font-family: 'Nova Mono';
+  font-size: 1.1rem;
+  width: 400px;
+  max-width: 100%;
+  background: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #000;
+}
+
+.tm-realtime-widget header > div {
+  border-radius: 8px 8px 0 0;
+  padding: 8px;
+  text-align: center;
+}
+
+.tm-realtime-widget header > div img {
+  max-height: 50px;
+}
+
+.tm-realtime-widget h1 {
+  font-family: 'Oswald';
+  background: #444;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 8px;
+  color: #fff;
+}
+
+.tm-realtime-last-measure {
+  text-align: center;
+  background: #444;
+  border-top: 1px solid #555;
+  color: #ffff00;
+}
+
+.tm-realtime-data {
+  display: table;
+  width: 100%;
+}
+.tm-realtime-data > div {
+  display: table-row;
+}
+.tm-realtime-data .tm-realtime-label {
+  display: table-cell;
+  text-align: right;
+  min-width: 35%;
+  padding: 8px;
+}
+.tm-realtime-value {
+  display: table-cell;
+  padding: 8px;
+}
+
+.tm-realtime-temperature .tm-realtime-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.tm-temp-cold {
+  color: #3333aa;
+}
+.tm-temp-warm {
+  color: #ff9900;
+}
+.tm-temp-hot {
+  color: #ff0000;
+}
+
+span[class^="direction-"]::before {
+  content: '\f0b1';
+  font-family: 'weathericons';
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.direction-up-right::before {
+  transform: rotate(45deg);
+}
+
+.direction-right::before {
+  transform: rotate(90deg);
+}
+
+.direction-down-right::before {
+  transform: rotate(135deg);
+}
+
+.direction-down::before {
+  transform: rotate(180deg);
+}
+
+.direction-down-left::before {
+  transform: rotate(225deg);
+}
+
+.direction-left::before {
+  transform: rotate(270deg);
+}
+
+.direction-up-left::before {
+  transform: rotate(315deg);
+}

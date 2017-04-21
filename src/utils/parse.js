@@ -1,5 +1,3 @@
-import $ from 'jquery'
-
 export default function parse (tag, cb, bind) {
   let elems = $(tag)
   if (elems.length) {
