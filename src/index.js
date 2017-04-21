@@ -67,7 +67,6 @@ export default class TMWidgets {
     // dom
     let wrapper = $('<section />', { 'class': 'tm-realtime-widget' })
     let tpl = `
-    <section class="tm-realtime-wrapper">
       <header>
         <div style="background: #000">
           <a href="//www.torinometeo.org/realtime/${stationSlug}" target="_blank">
@@ -110,7 +109,6 @@ export default class TMWidgets {
           <span class="tm-realtime-value">${data.rain} mm</span>
         </div>
       </div>
-    <section/>
     `
 
     $(el).replaceWith(wrapper.html(tpl))

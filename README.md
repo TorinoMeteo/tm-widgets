@@ -2,10 +2,10 @@
 
 ![image](widget.png "Widget")
 
-Libreria per l'inserimento di widget relativi alla rete di stazioni amatoriali TorinoMeteo in siti esterni.
+Libreria per l'inserimento di **widget responsive**  relativi alla rete di stazioni amatoriali TorinoMeteo in siti esterni.
 
 Questa libreria è stata sviluppata per venire incontro agli utenti che non hanno dimestichezza o non hanno la possibilità di fruire direttamente
-dei dati messi a disposizion tramite [web service](https://www.torinometeo.org/api-realtime/).
+dei dati messi a disposizione tramite [web service](https://www.torinometeo.org/api-realtime/).
 
 Questa libreria è stata sviluppata seguendo una linea guida principale: fornire un widget quanto più puro (non stilizzato) possibile.
 Questo per permettere un elevato grado di personalizzazione e stilizzazione agli utenti. Forniremo poi degli snippet css già pronti per l'utilizzo,
@@ -34,7 +34,7 @@ Includere tm-widgets (il file `dist/tm-widgets.min.js`)
 
     <script src="path/to/dist/tm-widgets.min.js"></script>
 
-Inserire all'iterno della pagina come qualunque altro tag l'elemento `<tmrealtime station="id-stazione" />`
+Inserire all'interno della pagina come qualunque altro tag l'elemento `<tmrealtime station="id-stazione" />`
 
     <div class="bla bla">
       <tmrealtime station="torino-regio-parco" />
@@ -68,7 +68,7 @@ Opzionale.
 
 Formato del datetime dell'ultima rilevazione, default: GG mese AAAA HH:MM, esempio: 21 aprile 2017 10:34
 
-I formati disponibili sono tutti quelli masticati da momentjs, e li trovi [qui](https://momentjs.com/docs/#/displaying/format/)
+I formati disponibili sono tutti quelli masticati da momentjs, e li trovate [qui](https://momentjs.com/docs/#/displaying/format/)
 
 ## Etichette
 
@@ -148,11 +148,11 @@ Ogni elemento del widget è corredato da una o più classi css che vi permettono
     - direction-right (248, 293]
     - direction-up-right (293, 337]
 
-  Questo vi consente ad esempio di utilizzare icone di direzione (come fatto nella demo). Il significato degli intervalli, qualora vi fosse oscuro, lo trovate [qui](https://it.wikipedia.org/wiki/Intervallo_(matematica))
+  Questo vi consente ad esempio di utilizzare icone di direzione (come fatto nella demo). Il significato degli intervalli (in gradi), qualora vi fosse oscuro, lo trovate [qui](https://it.wikipedia.org/wiki/Intervallo_(matematica))
 
 ## Problemi, Bug
 
-Se riscontrati malfunzionamenti, bug e quant'altro, riportateli nella pagina degli [issues](https://github.com/TorinoMeteo/tm-widgets/issues) cercando di fornire il maggior numero di informazioni possibile, sopratturro ** sistema operativo** e **browser**, più eventuali output in console.
+Se riscontrate malfunzionamenti, bug e quant'altro, riportateli nella pagina degli [issues](https://github.com/TorinoMeteo/tm-widgets/issues) cercando di fornire il maggior numero di informazioni possibile, soprattutto ** sistema operativo** e **browser**, più eventuali output in console.
 
 Tenete presente che questa libreria è stata sviluppata per browser moderni e che rispettano i normali standar web. Non intendo supportare browser obsoleti quali IE9, IE8 etc...
 
