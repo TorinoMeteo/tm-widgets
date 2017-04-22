@@ -152,9 +152,9 @@ Ogni elemento del widget è corredato da una o più classi css che vi permettono
 
 ## Problemi, Bug
 
-Se riscontrate malfunzionamenti, bug e quant'altro, riportateli nella pagina degli [issues](https://github.com/TorinoMeteo/tm-widgets/issues) cercando di fornire il maggior numero di informazioni possibile, soprattutto ** sistema operativo** e **browser**, più eventuali output in console.
+Se riscontrate malfunzionamenti, bug e quant'altro, riportateli nella pagina degli [issues](https://github.com/TorinoMeteo/tm-widgets/issues) cercando di fornire il maggior numero di informazioni possibile, soprattutto **sistema operativo** e **browser**, più eventuali output in console.
 
-Tenete presente che questa libreria è stata sviluppata per browser moderni e che rispettano i normali standar web. Non intendo supportare browser obsoleti quali IE9, IE8 etc...
+Tenete presente che questa libreria è stata sviluppata per browser moderni e che rispettano i normali standar web. Non intendo supportare browser obsoleti quali IE9, IE8 etc... (anche se non dovrebbero esserci grossi problemi)
 
 ## Sviluppo
 
@@ -178,7 +178,7 @@ Aprire il file `demo/basic.html` e switchare i commenti delle seguenti linee in 
 
 A questo punto potete visitare http://localhost:8080/demo/basic.html
 
-La pagina demo caricherà la libreria js compilata al volo da webpack. Ogni modifica alla libreria acuserà una re-compilazione, quindi vi sarà
+La pagina demo caricherà la libreria js compilata al volo da webpack. Ogni modifica alla libreria causerà una re-compilazione, quindi vi sarà
 sufficiente ricaricare la pagina per vedere le modifiche.
 
 Altri comandi:
