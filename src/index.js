@@ -24,7 +24,7 @@ export default class TMWidgets {
 
   renderTMRealtime (data, el) {
     // attributes
-    let type = $(el).attr('type')
+    let type = $(el).attr('type') || 'default'
 
     let widget
     if (type === 'default') {

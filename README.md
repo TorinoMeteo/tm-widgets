@@ -45,24 +45,24 @@ Non è richiesto alcun ulteriore passaggio. La libreria provvederà a parserizza
 
 ## Attributi
 
-Il tag `tmrealtime` può ricevere attributi che permettono di personalizzare il widget. Due soli attributi sono obbligatori: `type` e `station`.
-
-- `type` definisce il tipo di widget, per orà abbiamo solo sviluppato la tipologia **default**
-- `station` definisce la stazione di riferimento per i dati
+Il tag `tmrealtime` può ricevere attributi che permettono di personalizzare il widget. Un solo attributo è obbligatorio: `station`,
+perché definisce la stazione di riferimento per i dati
 
 Vediamo quindi tutti gli attributi:
-
-### type
-
-Obbligatorio.
-
-Rappresenta la tipologia di widget.
 
 ### station
 
 Obbligatorio.
 
 Rappresenta l'id della stazione di riferimento. Per sapere quali ID sono disponibili, fare riferimento al sito [torinometeo.org](https://www.torinometeo.org), nelle pagine di dettaglio delle stazioni, ad esempio [https://www.torinometeo.org/realtime/torino-regio-parco](https://www.torinometeo.org/realtime/torino-regio-parco) prendete la parte finale dell'url, in questo caso `torino-regio-parco`
+
+### type
+
+Opzionale.
+
+Definisce la tipologia di widget, default: `'default'`.
+
+Per ora abbiamo sviluppato solo il widget default.
 
 ### onReady
 
