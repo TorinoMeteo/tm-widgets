@@ -62,67 +62,31 @@ Opzionale.
 
 Definisce la tipologia di widget, default: `'default'`.
 
-Per ora abbiamo sviluppato solo il widget default.
+|Tipologia|Descrizione|
+|----------|---------------|
+|default|Nome stazione e principali misure realtime|
+|image|Nome stazione, temperatura e data rilevazione con immagine webcam o immagine stazione|
 
-### onReady
+### Altri attributi
 
-Opzionale.
+|Attributo|Descrizione|Tipologia|
+|------------------|-----------|-----------------|
+|`onReady`|Permette di definire una funzione (il nome della funzione anche con namespace se necessario, es 'window.miooggetto.miafunzione') che viene eseguita quando viene completata la renderizzazione del widget. Tale funzione riceverà come argomento l'oggetto jQuery wrapper del widget, e come contesto l'oggetto `window`|Tutte|
+|`datetimeFormat`|Opzionale. Formato del datetime dell'ultima rilevazione, default: GG mese AAAA HH:MM, esempio: 21 aprile 2017 10:34. I formati disponibili sono tutti quelli masticati da momentjs, e li trovate [qui](https://momentjs.com/docs/#/displaying/format/)|Tutte
 
-Permette di definire una funzione (il nome della funzione anche con namespace se necessario, es 'window.miooggetto.miafunzione') che viene eseguita quando viene completata la renderizzazione del widget. Tale funzione riceverà come argomento l'oggetto jQuery wrapper del widget, e come contesto l'oggetto `window`
-
-### datetimeFormat
-
-Opzionale.
-
-Formato del datetime dell'ultima rilevazione, default: GG mese AAAA HH:MM, esempio: 21 aprile 2017 10:34
-
-I formati disponibili sono tutti quelli masticati da momentjs, e li trovate [qui](https://momentjs.com/docs/#/displaying/format/)
-
-## Etichette
 
 Le etichette dei dati sono tutte personalizzabili come attributi. E' possibile anche utilizzare tag html, vedere nella directory demo ad esempio l'utilizzo di icone weathericons.
 
-### lastMeasureLabel
+|Attributo|Descrizione|Tipologia|
+|------------------|-----------|-----------------|
+|`lastMeasureLabel`|Opzionale. Default: 'ultima rilevazione'|Tutte
+|`temperatureLabel`|Opzionale. Default: 'temperatura'|Tutte
+|`rhLabel`|Opzionale. Default: 'umidità relativa'|default
+|`pressureLabel`|Opzionale. Default: 'pressione'|default
+|`windLabel`|Opzionale. Default: 'vento'|default
+|`rainRateLabel`|Opzionale. Default: 'intensità precipitazioni'|default
+|`rainLabel`|Opzionale. Default: 'accumulo precipitazioni'|default
 
-Opzionale.
-
-Default: 'ultima rilevazione'
-
-### temperatureLabel
-
-Opzionale.
-
-Default: 'temperatura'
-
-### rhLabel
-
-Opzionale.
-
-Default: 'umidità relativa'
-
-### pressureLabel
-
-Opzionale.
-
-Default: 'pressione'
-
-### windLabel
-
-Opzionale.
-
-Default: 'vento'
-
-### rainRateLabel
-
-Opzionale.
-
-Default: 'intensità precipitazioni'
-
-### rainLabel
-
-Opzionale.
-
-Default: 'accumulo precipitazioni'
 
 ## Esempio
 
