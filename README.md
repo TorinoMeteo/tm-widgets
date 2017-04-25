@@ -37,7 +37,7 @@ Includere tm-widgets (il file `dist/tm-widgets.min.js`)
 Inserire all'interno della pagina come qualunque altro tag l'elemento `<tmrealtime station="id-stazione" />`
 
     <div class="bla bla">
-      <tmrealtime station="torino-regio-parco" />
+      <tmrealtime type="default" station="torino-regio-parco" />
     </div>
 
 Non è richiesto alcun ulteriore passaggio. La libreria provvederà a parserizzare il documento html (quando è pronto), e sostituirà i tag
@@ -45,10 +45,18 @@ Non è richiesto alcun ulteriore passaggio. La libreria provvederà a parserizza
 
 ## Attributi
 
-Il tag `tmrealtime` può ricevere attributi che permettono di personalizzare il widget. Un solo attributo è obbligatorio: `station`,
-perché definisce la stazione di riferimento per i dati
+Il tag `tmrealtime` può ricevere attributi che permettono di personalizzare il widget. Due soli attributi sono obbligatori: `type` e `station`.
+
+- `type` definisce il tipo di widget, per orà abbiamo solo sviluppato la tipologia **default**
+- `station` definisce la stazione di riferimento per i dati
 
 Vediamo quindi tutti gli attributi:
+
+### type
+
+Obbligatorio.
+
+Rappresenta la tipologia di widget.
 
 ### station
 
