@@ -10,34 +10,18 @@
     <!-- <script src="/dist/tm-widgets.min.js"></script> <1!-- dev --1> -->
     <script src="../dist/tm-widgets.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="demo.css" rel="stylesheet" type="text/css" />
+    <link href="css/image.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Nova+Mono|Oswald:400,700" rel="stylesheet"> 
   </head>
   <body>
     <h1>tm-widgets</h1>
     <h2>tmrealtime demo</h2>
-    <p>Defaut widget</p>
+    <p>Image widget</p>
     <script>
       function tmReady () {
         // alert('widget is ready!')
       }
     </script>
-    <div class="widget-container">
-      <tmrealtime
-        type="default"
-        lastMeasureLabel="<i class='wi wi-time-1'></i>"
-        temperatureLabel="<i class='wi wi-thermometer'></i>"
-        rhLabel="<i class='wi wi-humidity'></i>"
-        pressureLabel="<i class='wi wi-barometer'></i>"
-        windLabel="<i class='wi wi-strong-wind'></i>"
-        rainRateLabel="<i class='wi wi-raindrops'></i>"
-        rainLabel="<i class='wi wi-umbrella'></i>"
-        station="torino-regio-parco"
-        onReady="tmReady"
-      />
-    </div>
-    <hr />
-    <p>Image widget</p>
     <div class="widget-container">
       <tmrealtime
         type="image"
@@ -48,7 +32,8 @@
         windLabel="<i class='wi wi-strong-wind'></i>"
         rainRateLabel="<i class='wi wi-raindrops'></i>"
         rainLabel="<i class='wi wi-umbrella'></i>"
-        station="torino-regio-parco"
+        station="santelisabetta"
+        datetimeFormat="HH:mm"
         onReady="tmReady"
       />
     </div>
