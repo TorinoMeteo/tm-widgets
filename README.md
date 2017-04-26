@@ -87,6 +87,7 @@ Definisce la tipologia di widget, default: `'default'`.
 |------------------|-----------|-----------------|
 |`onReady`|Permette di definire una funzione (il nome della funzione anche con namespace se necessario, es 'window.miooggetto.miafunzione') che viene eseguita quando viene completata la renderizzazione del widget. Tale funzione riceverà come argomento l'oggetto widget, e come contesto l'oggetto `window`. L'oggetto widget possiede una proprietà pubblica `wrapper` che rappresenta il wrapper jQuery del widget.|image, default|
 |`datetimeFormat`|Opzionale. Formato del datetime dell'ultima rilevazione, default: GG mese AAAA HH:MM, esempio: 21 aprile 2017 10:34. I formati disponibili sono tutti quelli masticati da momentjs, e li trovate [qui](https://momentjs.com/docs/#/displaying/format/)|image, default|
+|`refresh`|Opzionale. Intervallo in secondi di refresh dei dati. Default: 0. Il numero di secondi dopo i quali i dati vengono nuovamente fetchati. Intervalli minori di un minuto non vengono presi in considerazione.|default, image
 |`forceImage`|Opzionale. Valori consentiti: true, false. Default: 'false'. Indica se forzare la visualizzazione dell'immagine anche se una webcam è presente.|image
 
 
