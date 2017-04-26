@@ -11,7 +11,7 @@ export default class ImageTMRealtimeWidget extends TMRealtimeWidget {
     let tempClass = data.temperature < 10 ? 'cold' : (data.temperature < 20 ? 'warm' : 'hot')
     let imgUrl = data.station.webcam && !forceImage ? data.station.webcam : data.station.image_url
     // dom
-    let wrapper = $('<section />', { 'class': 'tm-realtime-widget tm-realtime-image-widget' })
+    this.wrapper = $('<section />', { 'class': 'tm-realtime-widget tm-realtime-image-widget' })
     let tpl = `
       <header>
         <div style="background: #000">
@@ -58,6 +58,6 @@ export default class ImageTMRealtimeWidget extends TMRealtimeWidget {
       </div>
     `
 
-    return wrapper.html(tpl)
+    return this.wrapper.html(tpl)
   }
 }
