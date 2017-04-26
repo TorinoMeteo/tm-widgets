@@ -10,7 +10,9 @@ export default class ImageTMRealtimeWidget extends TMRealtimeWidget {
     let forceImage = $(el).attr('forceImage') === 'true'
     // classes
     let tempClass = data.temperature < 10 ? 'cold' : (data.temperature < 20 ? 'warm' : 'hot')
-    let imgUrl = data.station.webcam && !forceImage ? data.station.webcam : data.station.image_url
+    let imgUrl = data.station.webcam && !forceImage
+      ? data.station.webcam + '?' + Math.random() * 1000000
+      : data.station.image_url
     // dom
     let tpl = `
       <header>
