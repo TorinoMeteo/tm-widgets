@@ -14,27 +14,36 @@ export default class TMWidgets {
     if (!stationSlug) {
       throw new Error('tmrealtime must define a station attribute')
     }
-    this.fetchData(stationSlug, el)
+    this.fetchData(stationSlug, el, this.renderTMRealtime.bind(this))
   }
 
-  fetchData (stationSlug, el) {
+  fetchData (stationSlug, el, cb) {
     $.getJSON('https://www.torinometeo.org/api/v1/realtime/data/' + stationSlug, (resp) => {
-      this.renderTMRealtime(resp, el)
+      cb(resp, el)
     })
   }
 
   renderTMRealtime (data, el) {
     // attributes
+    let stationSlug = $(el).attr('station')
     let type = $(el).attr('type') || 'default'
+    let refresh = parseInt($(el).attr('refresh') || 0)
 
     let widget
     if (type === 'default') {
-      widget = new DefaultTMRealtimeWidget()
+      widget = new DefaultTMRealtimeWidget(el)
     } else if (type === 'image') {
-      widget = new ImageTMRealtimeWidget()
+      widget = new ImageTMRealtimeWidget(el)
     }
 
-    $(el).replaceWith(widget.render(el, data))
+    $(el).replaceWith(widget.render(data))
+
+    // people better eat seconds
+    if (refresh > 59) {
+      setInterval(() => {
+        this.fetchData(stationSlug, el, (data, el) => widget.render(data))
+      }, refresh * 1000)
+    }
 
     // callback
     let cb = $(el).attr('onReady') || null

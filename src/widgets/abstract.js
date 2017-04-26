@@ -15,8 +15,13 @@ export default class TMRealtimeWidget {
     rain: 'accumulo precipitazioni'
   }
 
-  label (el, l) {
-    return $(el).attr(l + 'Label') || this.defaultLabels[l]
+  constructor (el) {
+    this.el = el
+    this.wrapper = $('<section />', { 'class': 'tm-realtime-widget' })
+  }
+
+  label (l) {
+    return $(this.el).attr(l + 'Label') || this.defaultLabels[l]
   }
 
   windDirClass (dir) {
