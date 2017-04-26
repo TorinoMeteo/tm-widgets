@@ -1,6 +1,7 @@
 import parse from 'utils/parse'
 import { execFunctionByName } from 'utils/functions'
 import DefaultTMRealtimeWidget from 'widgets/default'
+import ImageTMRealtimeWidget from 'widgets/image'
 
 export default class TMWidgets {
 
@@ -29,6 +30,8 @@ export default class TMWidgets {
     let widget
     if (type === 'default') {
       widget = new DefaultTMRealtimeWidget()
+    } else if (type === 'image') {
+      widget = new ImageTMRealtimeWidget()
     }
 
     $(el).replaceWith(widget.render(el, data))

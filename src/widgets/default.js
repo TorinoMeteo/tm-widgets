@@ -9,7 +9,7 @@ export default class DefaultTMRealtimeWidget extends TMRealtimeWidget {
     // classes
     let tempClass = data.temperature < 10 ? 'cold' : (data.temperature < 20 ? 'warm' : 'hot')
     // dom
-    let wrapper = $('<section />', { 'class': 'tm-realtime-widget' })
+    let wrapper = $('<section />', { 'class': 'tm-realtime-widget tm-realtime-default-widget' })
     let tpl = `
       <header>
         <div style="background: #000">

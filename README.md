@@ -1,6 +1,6 @@
 # tm-widgets
 
-![image](widget.png "Widget")
+![image](widget-default.png "Widget")
 
 Libreria per l'inserimento di **widget responsive**  relativi alla rete di stazioni amatoriali TorinoMeteo in siti esterni.
 
@@ -11,34 +11,48 @@ Questa libreria è stata sviluppata seguendo una linea guida principale: fornire
 Questo per permettere un elevato grado di personalizzazione e stilizzazione agli utenti. Forniremo poi degli snippet css già pronti per l'utilizzo,
 come fossero dei temi, per facilitare ulteriormente gli utenti che non hanno bisogno di personalizzazioni elevate.
 
-Questo significa che l'output di questa libreria sarà un html puro, con molte classi definite sugli elementi in modo da permettere una facile personalizzazione.
+Questo significa che l'output di questa libreria è un html puro, con molte classi definite sugli elementi in modo da permettere una facile personalizzazione.
 
 **NB**
 
-Nell'immagine vedete un widget personalizzato tramite il file css che trovate in `demo/demo.css`, la libreria di per sè non setta alcuno stile!
+Nelle immagini vedete widget personalizzati tramite file css che trovate nella directory `demo/css`, la libreria di per sè non setta alcuno stile (salvo qualche eccezione comunque sovrascrivibile)!
 
-## Requirements
+## Contenuti
+
+* [Requirements](#requirements)
+* [Utilizzo](#usage)
+* [Esempio](#example)
+* [Stili](#styles)
+* [Screenshots](#screenshots)
+* [Bug](#bug)
+* [Sviluppo](#dev)
+
+## <a name="requirements"></a>Requirements
 
 tm-widgets richiede necessariamente una versione di jQuery >= 1.14 già caricata nella pagina. In caso contrario nessun widget verrà renderizzato e comparirà un errore nella console.
 
-## Utilizzo
+## <a name="usage"></a>Utilizzo
 
-Includere jQuery nel documento, ad esempio
-
+1. Includere jQuery nel documento, ad esempio
+    ```
     <script
       src="https://code.jquery.com/jquery-2.2.4.min.js"
       integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
       crossorigin="anonymous"></script>
+    ```
 
-Includere tm-widgets (il file `dist/tm-widgets.min.js`)
-
+2. Includere tm-widgets (il file `dist/tm-widgets.min.js`)
+    ```
     <script src="path/to/dist/tm-widgets.min.js"></script>
+    ```
 
-Inserire all'interno della pagina come qualunque altro tag l'elemento `<tmrealtime station="id-stazione" />`
+3. Inserire all'interno della pagina come qualunque altro tag l'elemento `<tmrealtime station="id-stazione" />`
 
+    ```
     <div class="bla bla">
       <tmrealtime type="default" station="torino-regio-parco" />
     </div>
+    ```
 
 Non è richiesto alcun ulteriore passaggio. La libreria provvederà a parserizzare il documento html (quando è pronto), e sostituirà i tag
 `tmrealtime` con il widget opportuno.
@@ -62,69 +76,34 @@ Opzionale.
 
 Definisce la tipologia di widget, default: `'default'`.
 
-Per ora abbiamo sviluppato solo il widget default.
+|Tipologia|Descrizione|
+|----------|---------------|
+|default|Nome stazione e principali misure realtime|
+|image|Nome stazione, temperatura e data rilevazione con immagine webcam o, se assente, immagine stazione.|
 
-### onReady
+### Altri attributi
 
-Opzionale.
+|Attributo|Descrizione|Tipologia|
+|------------------|-----------|-----------------|
+|`onReady`|Permette di definire una funzione (il nome della funzione anche con namespace se necessario, es 'window.miooggetto.miafunzione') che viene eseguita quando viene completata la renderizzazione del widget. Tale funzione riceverà come argomento l'oggetto jQuery wrapper del widget, e come contesto l'oggetto `window`|image, default|
+|`datetimeFormat`|Opzionale. Formato del datetime dell'ultima rilevazione, default: GG mese AAAA HH:MM, esempio: 21 aprile 2017 10:34. I formati disponibili sono tutti quelli masticati da momentjs, e li trovate [qui](https://momentjs.com/docs/#/displaying/format/)|image, default|
+|`forceImage`|Opzionale. Valori consentiti: true, false. Default: 'false'. Indica se forzare la visualizzazione dell'immagine anche se una webcam è presente.|image
 
-Permette di definire una funzione (il nome della funzione anche con namespace se necessario, es 'window.miooggetto.miafunzione') che viene eseguita quando viene completata la renderizzazione del widget. Tale funzione riceverà come argomento l'oggetto jQuery wrapper del widget, e come contesto l'oggetto `window`
-
-### datetimeFormat
-
-Opzionale.
-
-Formato del datetime dell'ultima rilevazione, default: GG mese AAAA HH:MM, esempio: 21 aprile 2017 10:34
-
-I formati disponibili sono tutti quelli masticati da momentjs, e li trovate [qui](https://momentjs.com/docs/#/displaying/format/)
-
-## Etichette
 
 Le etichette dei dati sono tutte personalizzabili come attributi. E' possibile anche utilizzare tag html, vedere nella directory demo ad esempio l'utilizzo di icone weathericons.
 
-### lastMeasureLabel
+|Attributo|Descrizione|Tipologia|
+|------------------|-----------|-----------------|
+|`lastMeasureLabel`|Opzionale. Default: 'ultima rilevazione'|image, default|
+|`temperatureLabel`|Opzionale. Default: 'temperatura'|image, default|
+|`rhLabel`|Opzionale. Default: 'umidità relativa'|image, default|
+|`pressureLabel`|Opzionale. Default: 'pressione'|image, default|
+|`windLabel`|Opzionale. Default: 'vento'|image, default|
+|`rainRateLabel`|Opzionale. Default: 'intensità precipitazioni'|default|
+|`rainLabel`|Opzionale. Default: 'accumulo precipitazioni'|image, default|
 
-Opzionale.
 
-Default: 'ultima rilevazione'
-
-### temperatureLabel
-
-Opzionale.
-
-Default: 'temperatura'
-
-### rhLabel
-
-Opzionale.
-
-Default: 'umidità relativa'
-
-### pressureLabel
-
-Opzionale.
-
-Default: 'pressione'
-
-### windLabel
-
-Opzionale.
-
-Default: 'vento'
-
-### rainRateLabel
-
-Opzionale.
-
-Default: 'intensità precipitazioni'
-
-### rainLabel
-
-Opzionale.
-
-Default: 'accumulo precipitazioni'
-
-## Esempio
+## <a name="example"></a>Esempio
 
     <div class="widget-container">
       <tmrealtime
@@ -141,7 +120,7 @@ Default: 'accumulo precipitazioni'
       />
     </div>
 
-## Stili
+## <a name="styles"></a>Stili
 
 Ogni elemento del widget è corredato da una o più classi css che vi permettono di ottenere una stilizzazione ottimale per il contesto in cui il widget sarà inserito. Inoltre ci sono alcune classi dinamiche (che dipendono dai valori):
 
@@ -158,13 +137,24 @@ Ogni elemento del widget è corredato da una o più classi css che vi permettono
 
   Questo vi consente ad esempio di utilizzare icone di direzione (come fatto nella demo). Il significato degli intervalli (in gradi), qualora vi fosse oscuro, lo trovate [qui](https://it.wikipedia.org/wiki/Intervallo_(matematica))
 
-## Problemi, Bug
+## <a name="screenshots"></a>Screenshots
+
+Default type
+
+![image](widget-default.png "Widget")
+
+Image type
+
+![image](widget-image.png "Widget")
+
+
+## <a name="bug"></a>Problemi, Bug
 
 Se riscontrate malfunzionamenti, bug e quant'altro, riportateli nella pagina degli [issues](https://github.com/TorinoMeteo/tm-widgets/issues) cercando di fornire il maggior numero di informazioni possibile, soprattutto **sistema operativo** e **browser**, più eventuali output in console.
 
 Tenete presente che questa libreria è stata sviluppata per browser moderni e che rispettano i normali standar web. Non intendo supportare browser obsoleti quali IE9, IE8 etc... (anche se non dovrebbero esserci grossi problemi)
 
-## Sviluppo
+## <a name="dev"></a>Sviluppo
 
 Clonare il repository:
 
