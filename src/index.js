@@ -10,7 +10,7 @@ export default class TMWidgets {
   }
 
   initTMRealtime (el) {
-    let stationSlug = $(el).attr('station')
+    let stationSlug = jQuery(el).attr('station')
     if (!stationSlug) {
       throw new Error('tmrealtime must define a station attribute')
     }
@@ -18,16 +18,16 @@ export default class TMWidgets {
   }
 
   fetchData (stationSlug, el, cb) {
-    $.getJSON('https://www.torinometeo.org/api/v1/realtime/data/' + stationSlug, (resp) => {
+    jQuery.getJSON('https://www.torinometeo.org/api/v1/realtime/data/' + stationSlug, (resp) => {
       cb(resp, el)
     })
   }
 
   renderTMRealtime (data, el) {
     // attributes
-    let stationSlug = $(el).attr('station')
-    let type = $(el).attr('type') || 'default'
-    let refresh = parseInt($(el).attr('refresh') || 0)
+    let stationSlug = jQuery(el).attr('station')
+    let type = jQuery(el).attr('type') || 'default'
+    let refresh = parseInt(jQuery(el).attr('refresh') || 0)
 
     let widget
     if (type === 'default') {
@@ -36,7 +36,7 @@ export default class TMWidgets {
       widget = new ImageTMRealtimeWidget(el)
     }
 
-    $(el).replaceWith(widget.render(data))
+    jQuery(el).replaceWith(widget.render(data))
 
     // people better eat seconds
     if (refresh > 59) {
@@ -46,7 +46,7 @@ export default class TMWidgets {
     }
 
     // callback
-    let cb = $(el).attr('onReady') || null
+    let cb = jQuery(el).attr('onReady') || null
     if (cb) {
       execFunctionByName(cb, window, widget)
     }
@@ -60,4 +60,4 @@ if (typeof jQuery === 'undefined') {
 }
 // run on domready
 let TMWidgetsInstance = new TMWidgets()
-$(document).ready(TMWidgetsInstance.run.bind(TMWidgetsInstance))
+jQuery(document).ready(TMWidgetsInstance.run.bind(TMWidgetsInstance))

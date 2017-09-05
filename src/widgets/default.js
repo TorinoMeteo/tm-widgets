@@ -5,8 +5,8 @@ export default class DefaultTMRealtimeWidget extends TMRealtimeWidget {
 
   render (data) {
     let el = this.el
-    let datetimeFormat = $(el).attr('datetimeFormat') || 'LLL'
-    let stationSlug = $(el).attr('station')
+    let datetimeFormat = jQuery(el).attr('datetimeFormat') || 'LLL'
+    let stationSlug = jQuery(el).attr('station')
     // classes
     let tempClass = data.temperature < 10 ? 'cold' : (data.temperature < 20 ? 'warm' : 'hot')
     // dom

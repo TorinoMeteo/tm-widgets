@@ -5,9 +5,9 @@ export default class ImageTMRealtimeWidget extends TMRealtimeWidget {
 
   render (data) {
     let el = this.el
-    let datetimeFormat = $(el).attr('datetimeFormat') || 'LLL'
-    let stationSlug = $(el).attr('station')
-    let forceImage = $(el).attr('forceImage') === 'true'
+    let datetimeFormat = jQuery(el).attr('datetimeFormat') || 'LLL'
+    let stationSlug = jQuery(el).attr('station')
+    let forceImage = jQuery(el).attr('forceImage') === 'true'
     // classes
     let tempClass = data.temperature < 10 ? 'cold' : (data.temperature < 20 ? 'warm' : 'hot')
     let imgUrl = data.station.webcam && !forceImage

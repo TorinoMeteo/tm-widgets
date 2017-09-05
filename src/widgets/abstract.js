@@ -17,11 +17,11 @@ export default class TMRealtimeWidget {
 
   constructor (el) {
     this.el = el
-    this.wrapper = $('<section />', { 'class': 'tm-realtime-widget' })
+    this.wrapper = jQuery('<section />', { 'class': 'tm-realtime-widget' })
   }
 
   label (l) {
-    return $(this.el).attr(l + 'Label') || this.defaultLabels[l]
+    return jQuery(this.el).attr(l + 'Label') || this.defaultLabels[l]
   }
 
   windDirClass (dir) {
